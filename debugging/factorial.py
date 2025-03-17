@@ -8,10 +8,11 @@ def factorial(n):
         n -= 1
     return result
 if len(sys.argv) != 2:
-    print("Usage: ./factorial.py <number>")
+    print("Usage: ./factorial.py <non-negative integer>")
     sys.exit(1)
 try:
-    f = factorial(int(sys.argv[1]))
-    print(f)
-except ValueError:
-    print("Please provide a valid integer.")
+    num = int(sys.argv[1])
+    print(factorial(num))
+except ValueError as e:
+    print(f"Error: {e}")
+    sys.exit(1)
