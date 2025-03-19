@@ -42,7 +42,7 @@ class Minesweeper:
     def reveal(self, x, y):
         if not (0 <= x < self.width and 0 <= y < self.height):
           return True
-        if self.revealed_cells[y][x]:
+        if self.revealed[y][x]:
           return True
         if (y * self.width + x) in self.mines:
           self.game_over = True
